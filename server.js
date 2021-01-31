@@ -1,15 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-// const cors = require("cors");
-var path = require('path');
 
 const app = express();
-//closed
-// var corsOptions = {
-//   origin: "http://localhost:8081"
-// };
-
-// app.use(cors(corsOptions));
 
 app.use(bodyParser.json());
 

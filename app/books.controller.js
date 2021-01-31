@@ -2,14 +2,16 @@ const db = require(".");
 const Book = db.books;
 
 exports.create = (req, res) => {
-    if (!req.body.title) {
-        res.status(400).send({ message: "Content can not be empty!" });
+    if (!req.body.title && !req.body.author) {
+        res.status(400).send({ message: "Title and Author can not be empty!" });
         return;
     }
 
     const book = new Book({
       title: req.body.title,
+      author: req.body.author,
       description: req.body.description,
+      pages: req.body.pages,
       published: req.body.published ? req.body.published : false
     });
 
